@@ -13,8 +13,8 @@ const app = express();
 express.urlencoded({ extended: false })
 express.static(__dirname + "/public")
 
-app.get('/', function (req, res) {
-  res.send(layout(''));
+app.get('/', (req, res, next)=> {
+  res.redirect('/wiki');
   // db.authenticate().
   // then(() => {
   //   console.log('connected to the database');
